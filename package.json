@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": " https://didiercanoarroyave7-alt.github.io/clase3/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,7 +12,8 @@
   },
   "dependencies": {
     "react": "^19.2.7",
-    "react-dom": "^19.2.7"
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.2"
   },
   "devDependencies": {
     "@types/react": "^19.2.17",

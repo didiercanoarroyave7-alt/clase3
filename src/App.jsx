@@ -1,18 +1,13 @@
-// Importa el hook para manejar estado local.
 import { useState } from "react";
-// Importa estilos globales del componente principal.
-import "./App.css";
-// Importa la tarjeta visual para cada contacto. 
-import ContactoCard from "./components/ContactoCard";
-// Importa el formulario para crear contactos.
-import FormularioContacto from "./components/FormularioContacto";
+import { Routes, Route } from "react-router-dom";
 
-// Componente principal de la agenda.
+import Inicio from "./pages/Inicio";
+import Contactos from "./pages/Contactos";
+import "./App.css";
+
 export default function App() {
-  // Estado: lista de contactos inicial con un ejemplo.
   const [contactos, setContactos] = useState([
     {
-      // Identificador único del contacto.
       id: 1,
       nombre: "Carolina Pérez",
       telefono: "300 123 4567",
@@ -20,49 +15,51 @@ export default function App() {
       etiqueta: "Compañera",
     },
     {
-      id: 1,
-      nombre: "andres mateo",
-      telefono: "345550322",
+      id: 2,
+      nombre: "Andrés Mateo",
+      telefono: "345 550 322",
       correo: "andres@sena.edu.co",
-      etiqueta: "tutor",
+      etiqueta: "Tutor",
     },
     {
-      id: 1,
-      nombre: "jeronimo pelaes",
+      id: 3,
+      nombre: "Jerónimo Peláez",
       telefono: "334 123 4567",
       correo: "jero@sena.edu.co",
-      etiqueta: "compañero",
-    }
+      etiqueta: "Compañero",
+    },
   ]);
 
-  // Agrega un nuevo contacto al estado.
-  const agregarContacto = (nuevo) => {
-    // Toma el estado previo y agrega el nuevo con un id generado.
-    setContactos((prev) => [...prev, { id: Date.now(), ...nuevo }]);
+  // Agregar un nuevo contacto a la lista
+  const agregarContacto = (nuevoContacto) => {
+    setContactos((prev) => [
+      ...prev,
+      { id: Date.now(), ...nuevoContacto },
+    ]);
   };
 
-  // Elimina un contacto por su id.
-  function eliminarContacto(id) {
-    setContactos(contactos.filter((contacto) => contacto.id !== id));
-  }
+  // Eliminar un contacto por su ID
+  const eliminarContacto = (id) => {
+    setContactos((prev) =>
+      prev.filter((contacto) => contacto.id !== id)
+    );
+  };
 
   return (
-    <main className="app-container">
-      <h1 className="app-title">Agenda ADSO v2</h1>
-      <FormularioContacto onAgregar={agregarContacto} />
-      <section className="lista-contactos">
-        {contactos.map((c) => (
-          <ContactoCard
-            key={c.id}
-            id={c.id}
-            nombre={c.nombre}
-            telefono={c.telefono}
-            correo={c.correo}
-            etiqueta={c.etiqueta}
+    <Routes>
+      <Route
+        path="/"
+        element={<Inicio onAgregar={agregarContacto} />}
+      />
+      <Route
+        path="/contactos"
+        element={
+          <Contactos
+            contactos={contactos}
             onDelete={eliminarContacto}
           />
-        ))}
-      </section>
-    </main>
+        }
+      />
+    </Routes>
   );
 }
