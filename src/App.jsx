@@ -11,6 +11,9 @@ function App() {
   const [contactos, setContactos] = useState([]);
   const [busqueda, setBusqueda] = useState("");
 
+  // true = A-Z, false = Z-A
+  const [ordenAsc, setOrdenAsc] = useState(true);
+
   // GET - Obtener contactos desde JSON Server
   useEffect(() => {
     fetch(API)
@@ -56,10 +59,31 @@ function App() {
       });
   };
 
-  // Filtrar contactos
-  const contactosFiltrados = contactos.filter((contacto) =>
-    contacto.nombre.toLowerCase().includes(busqueda.toLowerCase())
-  );
+  // Filtrar por nombre, email o etiqueta
+  const contactosFiltrados = contactos.filter((contacto) => {
+    const termino = busqueda.toLowerCase();
+
+    const nombre = (contacto.nombre || "").toLowerCase();
+    const email = (contacto.email || "").toLowerCase();
+    const etiqueta = (contacto.etiqueta || "").toLowerCase();
+
+    return (
+      nombre.includes(termino) ||
+      email.includes(termino) ||
+      etiqueta.includes(termino)
+    );
+  });
+
+  // Ordenar A-Z o Z-A
+  const contactosOrdenados = [...contactosFiltrados].sort((a, b) => {
+    const nombreA = (a.nombre || "").toLowerCase();
+    const nombreB = (b.nombre || "").toLowerCase();
+
+    if (nombreA < nombreB) return ordenAsc ? -1 : 1;
+    if (nombreA > nombreB) return ordenAsc ? 1 : -1;
+
+    return 0;
+  });
 
   return (
     <div className="app">
@@ -68,19 +92,36 @@ function App() {
 
       <FormularioContacto onAgregar={agregarContacto} />
 
-      <Buscador
-        busqueda={busqueda}
-        setBusqueda={setBusqueda}
-      />
+      {/* Buscador y ordenamiento */}
+      <div className="busqueda-orden">
+        <Buscador
+          busqueda={busqueda}
+          setBusqueda={setBusqueda}
+        />
 
+        <button
+          type="button"
+          onClick={() => setOrdenAsc((prev) => !prev)}
+        >
+          {ordenAsc ? "Ordenar Z-A" : "Ordenar A-Z"}
+        </button>
+      </div>
+
+      {/* Resultados */}
       <div className="contactos">
-        {contactosFiltrados.map((contacto) => (
-          <ContactoCard
-            key={contacto.id}
-            contacto={contacto}
-            onEliminar={eliminarContacto}
-          />
-        ))}
+        {contactosOrdenados.length === 0 ? (
+          <p>
+            No se encontraron contactos que coincidan con la búsqueda.
+          </p>
+        ) : (
+          contactosOrdenados.map((contacto) => (
+            <ContactoCard
+              key={contacto.id}
+              contacto={contacto}
+              onEliminar={eliminarContacto}
+            />
+          ))
+        )}
       </div>
     </div>
   );
