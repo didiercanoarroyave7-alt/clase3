@@ -2,7 +2,7 @@ function Buscador({ busqueda, setBusqueda }) {
   return (
     <input
       type="text"
-      placeholder="Buscar por nombre, correo o etiqueta..."
+      placeholder="Buscar contacto..."
       value={busqueda}
       onChange={(e) => setBusqueda(e.target.value)}
     />

@@ -1,148 +1,660 @@
-/* Contenedor principal */
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+
 .app {
-  width: 100%;
-  max-width: 1000px;
+  width: 55%;
+  max-width: 760px;
+  min-width: 520px;
+
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: 30px 0;
+
+  box-sizing: border-box;
 }
 
-/* Título */
+
+/* ==========================================
+   TÍTULO
+========================================== */
+
 .app h1 {
-  margin-bottom: 30px;
+  margin: 0 0 6px;
+
   text-align: center;
-  color: #4c1d95;
-  font-size: 2.5rem;
+
+  color: #5b21b6;
+
+  font-size: 2rem;
   font-weight: 800;
 }
 
-/* Formulario */
+
+/* ==========================================
+   SUBTÍTULO
+========================================== */
+
+.app h2 {
+  margin: 0 0 22px;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   FORMULARIO
+========================================== */
+
 .app form {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr) auto;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.app form input,
-.app > input {
   width: 100%;
-  padding: 13px 15px;
-  border: 1px solid #d8b4fe;
-  border-radius: 10px;
-  outline: none;
-  background-color: #ffffff;
-  color: #374151;
-  font-size: 1rem;
+
+  margin: 0 auto 18px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  padding: 16px;
+
+  background: #faf5ff;
+
+  border: 1px solid #e9d5ff;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 16px rgba(76, 29, 149, 0.07);
+
   box-sizing: border-box;
+}
+
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.app form input {
+  width: 100%;
+  height: 40px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #d8b4fe;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: white;
+
+  color: #374151;
+
+  font-size: 0.85rem;
+
+  box-sizing: border-box;
+
   transition: 0.2s ease;
 }
 
-.app form input:focus,
-.app > input:focus {
+
+.app form input:focus {
   border-color: #7c3aed;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+
+  box-shadow:
+    0 0 0 3px rgba(124, 58, 237, 0.10);
 }
 
-/* Botón del formulario */
+
+.app form input::placeholder {
+  color: #9ca3af;
+}
+
+
+/* ==========================================
+   BOTÓN AGREGAR
+========================================== */
+
 .app form button {
-  padding: 13px 20px;
+  grid-column: 1 / -1;
+
+  width: 100%;
+  height: 40px;
+
   border: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #7c3aed, #9333ea);
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #9333ea
+    );
+
   color: white;
-  font-size: 1rem;
+
+  font-size: 0.85rem;
+
   font-weight: 700;
+
   cursor: pointer;
+
   transition: 0.2s ease;
+}
+
+
+.app form button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px rgba(124, 58, 237, 0.20);
+}
+
+
+/* ==========================================
+   BUSCADOR Y CONTROLES
+========================================== */
+
+.busqueda-orden {
+  width: 100%;
+
+  margin: 0 auto 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BUSCADOR
+========================================== */
+
+.busqueda-orden input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 38px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #d8b4fe;
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background: white;
+
+  color: #374151;
+
+  font-size: 0.85rem;
+
+  box-sizing: border-box;
+}
+
+
+.busqueda-orden input:focus {
+  border-color: #7c3aed;
+
+  box-shadow:
+    0 0 0 3px rgba(124, 58, 237, 0.10);
+}
+
+
+/* ==========================================
+   BOTÓN ORDENAR
+========================================== */
+
+.busqueda-orden > button {
+  height: 38px;
+
+  padding: 0 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #9333ea
+    );
+
+  color: white;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
   white-space: nowrap;
 }
 
-.app form button:hover {
-  background: linear-gradient(135deg, #6d28d9, #7e22ce);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.25);
+
+/* ==========================================
+   SELECT
+========================================== */
+
+.busqueda-orden select {
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid #d8b4fe;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #4b5563;
+
+  font-size: 0.8rem;
+
+  cursor: pointer;
+
+  outline: none;
 }
 
-/* Buscador */
-.app > input {
-  display: block;
-  margin-bottom: 25px;
-}
 
-/* Contenedor de contactos */
-.contactos {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
+/* ==========================================
+   INFORMACIÓN PAGINACIÓN
+========================================== */
 
-/* Tarjeta */
-.contacto-card {
-  padding: 22px;
+.info-paginacion {
+  width: 100%;
+
+  margin: 12px auto;
+
+  padding: 9px 12px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #f5f3ff;
+
   border: 1px solid #e9d5ff;
-  border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 8px 25px rgba(76, 29, 149, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  border-radius: 8px;
+
+  color: #5b21b6;
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  box-sizing: border-box;
 }
+
+
+/* ==========================================
+   CONTACTOS
+========================================== */
+
+.contactos {
+  width: 100%;
+
+  margin: 16px auto 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   TARJETA
+========================================== */
+
+.contacto-card {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 145px;
+
+  padding: 16px;
+
+  border: 1px solid #e9d5ff;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 4px 14px rgba(76, 29, 149, 0.06);
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
 
 .contacto-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(76, 29, 149, 0.15);
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 8px 20px rgba(76, 29, 149, 0.12);
 }
 
-/* Nombre del contacto */
+
+/* ==========================================
+   NOMBRE
+========================================== */
+
 .contacto-card h3 {
-  margin: 0 0 15px;
+  margin: 0 0 8px;
+
   color: #5b21b6;
-  font-size: 1.4rem;
+
+  font-size: 1.05rem;
+
+  font-weight: 700;
 }
 
-/* Información */
+
+/* ==========================================
+   DATOS
+========================================== */
+
 .contacto-card p {
-  margin: 8px 0;
+  margin: 5px 0;
+
   color: #4b5563;
-  font-size: 0.98rem;
+
+  font-size: 0.82rem;
+
+  line-height: 1.4;
+
+  word-break: break-word;
 }
 
-/* Botón eliminar */
+
+/* ==========================================
+   BOTÓN ELIMINAR
+========================================== */
+
 .contacto-card button {
   width: 100%;
-  margin-top: 15px;
-  padding: 10px;
+
+  margin-top: auto;
+
+  padding: 8px;
+
   border: none;
-  border-radius: 8px;
-  background-color: #ef4444;
+
+  border-radius: 7px;
+
+  background: #ef4444;
+
   color: white;
+
+  font-size: 0.78rem;
+
   font-weight: 600;
+
   cursor: pointer;
+
   transition: 0.2s ease;
 }
 
+
 .contacto-card button:hover {
-  background-color: #dc2626;
-  transform: scale(1.02);
+  background: #dc2626;
+
+  transform: translateY(-1px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+
+/* ==========================================
+   SIN RESULTADOS
+========================================== */
+
+.sin-resultados {
+  grid-column: 1 / -1;
+
+  width: 100%;
+
+  text-align: center;
+
+  padding: 20px;
+
+  color: #6b7280;
+
+  background: #f9fafb;
+
+  border: 1px dashed #d1d5db;
+
+  border-radius: 9px;
+
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   PAGINACIÓN
+========================================== */
+
+.paginacion {
+  width: 100%;
+
+  margin: 18px auto 0;
+
+  padding: 8px 0;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  flex-wrap: wrap;
+}
+
+
+/* ==========================================
+   BOTONES PAGINACIÓN
+========================================== */
+
+.paginacion button {
+  min-width: 34px;
+
+  height: 33px;
+
+  padding: 0 9px;
+
+  border: 1px solid #d8b4fe;
+
+  border-radius: 7px;
+
+  background: white;
+
+  color: #4b5563;
+
+  font-size: 0.78rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.paginacion button:hover:not(:disabled) {
+  border-color: #7c3aed;
+
+  color: #7c3aed;
+
+  background: #f5f3ff;
+}
+
+
+/* ==========================================
+   PÁGINA ACTIVA
+========================================== */
+
+.paginacion button.activo {
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #9333ea
+    );
+
+  border-color: #7c3aed;
+
+  color: white;
+}
+
+
+/* ==========================================
+   DESHABILITADO
+========================================== */
+
+.paginacion button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
   .app {
-    padding: 25px 16px;
+    width: 70%;
+
+    min-width: 0;
+
+    padding: 25px 0;
   }
 
-  .app h1 {
-    font-size: 2rem;
-  }
+}
 
-  .app form {
-    grid-template-columns: 1fr;
-  }
 
-  .app form button {
-    width: 100%;
+/* ==========================================
+   TABLET PEQUEÑA
+========================================== */
+
+@media (max-width: 700px) {
+
+  .app {
+    width: 85%;
   }
 
   .contactos {
     grid-template-columns: 1fr;
   }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 500px) {
+
+  .app {
+    width: 92%;
+
+    padding: 20px 0;
+  }
+
+
+  .app h1 {
+    font-size: 1.6rem;
+  }
+
+
+  .app h2 {
+    font-size: 0.85rem;
+  }
+
+
+  /* FORMULARIO */
+
+  .app form {
+    grid-template-columns: 1fr;
+
+    gap: 8px;
+
+    padding: 13px;
+  }
+
+
+  .app form button {
+    grid-column: auto;
+  }
+
+
+  /* BUSCADOR */
+
+  .busqueda-orden {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .busqueda-orden input,
+  .busqueda-orden select,
+  .busqueda-orden > button {
+    width: 100%;
+  }
+
+
+  /* INFORMACIÓN */
+
+  .info-paginacion {
+    flex-direction: column;
+
+    gap: 4px;
+
+    text-align: center;
+  }
+
+
+  /* CONTACTOS */
+
+  .contactos {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
 }
