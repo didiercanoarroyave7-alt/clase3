@@ -1,58 +1,16 @@
 {
   "contactos": [
     {
-      "id": "1",
-      "nombre": "Juan Pérez",
-      "telefono": "3001234567",
-      "email": "juan@gmail.com"
-    },
-    {
-      "id": "2",
-      "nombre": "María López",
-      "telefono": "3109876543",
-      "email": "maria@gmail.com"
-    },
-    {
-      "id": "3",
-      "nombre": "Carlos Gómez",
-      "telefono": "3154567890",
-      "email": "carlos@gmail.com"
-    },
-    {
       "id": "4",
       "nombre": "Ana Rodríguez",
       "telefono": "3201234567",
       "email": "ana@gmail.com"
     },
     {
-      "id": "5",
-      "nombre": "Luis Martínez",
-      "telefono": "3012345678",
-      "email": "luis@gmail.com"
-    },
-    {
-      "id": "6",
-      "nombre": "Laura Sánchez",
-      "telefono": "3123456789",
-      "email": "laura@gmail.com"
-    },
-    {
-      "id": "7",
-      "nombre": "Andrés Ramírez",
-      "telefono": "3134567890",
-      "email": "andres@gmail.com"
-    },
-    {
       "id": "8",
       "nombre": "Sofía Torres",
       "telefono": "3145678901",
       "email": "sofia@gmail.com"
-    },
-    {
-      "id": "9",
-      "nombre": "Diego Hernández",
-      "telefono": "3167890123",
-      "email": "diego@gmail.com"
     },
     {
       "id": "10",
@@ -67,58 +25,11 @@
       "email": "sebastian@gmail.com"
     },
     {
-      "id": "12",
-      "nombre": "Camila Moreno",
-      "telefono": "3190123456",
-      "email": "camila@gmail.com"
-    },
-    {
-      "id": "13",
-      "nombre": "Daniel Ortiz",
-      "telefono": "3002345678",
-      "email": "daniel@gmail.com"
-    },
-    {
-      "id": "14",
-      "nombre": "Isabella Rojas",
-      "telefono": "3013456789",
-      "email": "isabella@gmail.com"
-    },
-    {
-      "id": "15",
-      "nombre": "Mateo Jiménez",
-      "telefono": "3024567890",
-      "email": "mateo@gmail.com"
-    },
-    {
-      "id": "16",
-      "nombre": "Natalia Restrepo",
-      "telefono": "3035678901",
-      "email": "natalia@gmail.com"
-    },
-    {
-      "id": "17",
-      "nombre": "Felipe Molina",
-      "telefono": "3046789012",
-      "email": "felipe@gmail.com"
-    },
-    {
-      "id": "18",
-      "nombre": "Gabriela Ruiz",
-      "telefono": "3057890123",
-      "email": "gabriela@gmail.com"
-    },
-    {
       "id": "19",
       "nombre": "Santiago Díaz",
       "telefono": "3068901234",
       "email": "santiago@gmail.com"
-    },
-    {
-      "id": "20",
-      "nombre": "Paula Restrepo",
-      "telefono": "3079012345",
-      "email": "paula@gmail.com"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
