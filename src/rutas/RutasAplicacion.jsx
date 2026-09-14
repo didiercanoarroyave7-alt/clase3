@@ -1,6 +1,6 @@
-// ==========================================
+
 // RUTAS DE LA APLICACIÓN
-// ==========================================
+
 // Rutas públicas (login y registro) y rutas
 // privadas dentro del diseño con menú.
 

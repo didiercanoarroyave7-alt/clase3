@@ -1,6 +1,5 @@
-// ==========================================
+
 // APLICACIÓN
-// ==========================================
 // Sin lógica de negocio: solo arma el contexto
 // de sesión y entrega las rutas.
 

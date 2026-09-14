@@ -1,6 +1,5 @@
-// ==========================================
+
 // BARRA LATERAL
-// ==========================================
 // El menú se arma según el rol: las opciones
 // que el usuario no puede usar no se pintan.
 
@@ -21,6 +20,8 @@ const ENLACES = [
     etiqueta: "Buscar contactos",
     icono: "🔍",
     permiso: PERMISOS.VER_CONTACTOS,
+
+    excluirPermisos: PERMISOS.VER_PANEL_ADMIN
   },
   {
     a: "/usuario",
@@ -38,9 +39,16 @@ const ENLACES = [
 
 function BarraLateral({ abierta, alNavegar }) {
   const { tienePermiso } = usarAutenticacion();
-
   const enlacesVisibles = ENLACES.filter(
-    (enlace) => !enlace.permiso || tienePermiso(enlace.permiso)
+    (enlace) => {
+      if(enlace.excluirPermisos && tienePermiso(enlace.excluirPermisos)) {
+        return false;
+      }
+      if(enlace.permiso && !tienePermiso(enlace.permiso)) {
+        return false;
+      }
+      return true;
+    }
   );
 
   return (

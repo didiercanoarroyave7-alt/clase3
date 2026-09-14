@@ -1,6 +1,6 @@
-// ==========================================
+
 // VALIDACIONES
-// ==========================================
+
 // Un validador por campo. Cada uno recibe el
 // valor y devuelve el mensaje de error, o ""
 // si el campo es válido.
@@ -15,14 +15,14 @@ export const REGLAS = {
   CORREO: { MAXIMO: 80 },
 };
 
+// lo que debe tener correo
 const EXPRESION_CORREO = /^[^\s@]+@[^\s@]+\.[A-Za-z]{2,}$/;
 
 const SOLO_NUMEROS = /^[0-9]+$/;
 
-// ==========================================
-// NOMBRE
-// ==========================================
 
+// NOMBRE 
+// todo sobre nombre minimo 3 letras 
 export function validarNombre(valor = "") {
   const texto = valor.trim();
 
@@ -41,9 +41,9 @@ export function validarNombre(valor = "") {
   return "";
 }
 
-// ==========================================
-// CORREO
-// ==========================================
+
+// CORREO 
+// sobre correo 
 
 export function validarCorreo(valor = "") {
   const texto = valor.trim();
@@ -63,9 +63,8 @@ export function validarCorreo(valor = "") {
   return "";
 }
 
-// ==========================================
+
 // CONTRASEÑA
-// ==========================================
 
 export function validarContrasena(valor = "") {
   // La contraseña no se recorta: un espacio
@@ -86,9 +85,8 @@ export function validarContrasena(valor = "") {
   return "";
 }
 
-// ==========================================
+
 // CONTRASEÑA EN EL LOGIN
-// ==========================================
 // Al entrar no pedimos longitud mínima: eso se
 // exige al registrarse. Aquí solo que no venga
 // vacía, el resto lo decide el servicio.
@@ -101,9 +99,9 @@ export function validarContrasenaLogin(valor = "") {
   return "";
 }
 
-// ==========================================
+
 // CONFIRMAR CONTRASEÑA
-// ==========================================
+
 
 export function validarConfirmacion(valor = "", valores = {}) {
   if (!valor) {
@@ -117,9 +115,8 @@ export function validarConfirmacion(valor = "", valores = {}) {
   return "";
 }
 
-// ==========================================
+
 // TELÉFONO
-// ==========================================
 
 export function validarTelefono(valor = "") {
   const texto = valor.trim();
@@ -143,9 +140,9 @@ export function validarTelefono(valor = "") {
   return "";
 }
 
-// ==========================================
+
 // ETIQUETA (campo opcional)
-// ==========================================
+
 
 export function validarEtiqueta(valor = "") {
   const texto = valor.trim();
@@ -157,9 +154,7 @@ export function validarEtiqueta(valor = "") {
   return "";
 }
 
-// ==========================================
 // VALIDAR UN CAMPO DEL ESQUEMA
-// ==========================================
 // esquema = { nombre: validarNombre, ... }
 
 export function validarCampo(campo, valores, esquema) {
@@ -172,9 +167,8 @@ export function validarCampo(campo, valores, esquema) {
   return validador(valores[campo], valores);
 }
 
-// ==========================================
+
 // VALIDAR TODO EL FORMULARIO
-// ==========================================
 
 export function validarFormulario(valores, esquema) {
   const errores = {};
@@ -190,10 +184,10 @@ export function validarFormulario(valores, esquema) {
   return errores;
 }
 
-// ==========================================
-// ¿HAY ERRORES?
-// ==========================================
 
+// ¿HAY ERRORES?
+// contiene al menos un mensaje activo ,
+//  devolviendo un valor booleano ( trueo false).
 export function hayErrores(errores) {
   return Object.values(errores).some(Boolean);
 }

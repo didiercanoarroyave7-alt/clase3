@@ -1,6 +1,5 @@
-// ==========================================
+
 // SERVICIO DE AUTENTICACIÓN
-// ==========================================
 // Login y registro usando localStorage.
 //
 // NOTA IMPORTANTE:
@@ -29,10 +28,9 @@ function esperar(ms = RETARDO) {
   });
 }
 
-// ==========================================
-// CONTRASEÑAS
-// ==========================================
 
+// CONTRASEÑAS
+// codificación y verificación de contraseñas
 function codificar(contrasena) {
   return btoa(
     encodeURIComponent(contrasena)
@@ -43,11 +41,10 @@ function coincide(contrasena, codificada) {
   return codificar(contrasena) === codificada;
 }
 
-// ==========================================
 // USUARIO SEMILLA
-// ==========================================
 // Sin esto no habría con qué entrar la
-// primera vez que se abre la app.
+// primera vez que se abre la app. bueno donde no tubiera la
+// opcion en registros
 
 const USUARIO_SEMILLA = {
   id: "usuario-administrador",
@@ -63,10 +60,10 @@ export const CREDENCIALES_DEMO = {
   contrasena: "Admin123",
 };
 
-// ==========================================
-// LISTA DE USUARIOS
-// ==========================================
 
+// LISTA DE USUARIOS
+// gestionar la persistencia de usuarios en el 
+// almacenamiento local (como localStorage)
 function obtenerUsuarios() {
   const usuarios = leer(CLAVES.USUARIOS, null);
 
@@ -94,9 +91,9 @@ function sinContrasena(usuario) {
   return publico;
 }
 
-// ==========================================
+
 // REGISTRAR
-// ==========================================
+// registro de un nuevo usuario
 
 export async function registrar({
   nombre,
@@ -134,10 +131,8 @@ export async function registrar({
   return sinContrasena(nuevoUsuario);
 }
 
-// ==========================================
-// INICIAR SESIÓN
-// ==========================================
 
+// INICIAR SESIÓN
 export async function iniciarSesion({ correo, contrasena }) {
   await esperar();
 
@@ -168,18 +163,15 @@ export async function iniciarSesion({ correo, contrasena }) {
   return sesion;
 }
 
-// ==========================================
+
 // CERRAR SESIÓN
-// ==========================================
 
 export function cerrarSesion() {
   eliminar(CLAVES.SESION);
 }
 
-// ==========================================
-// SESIÓN ACTUAL
-// ==========================================
 
+// SESIÓN ACTUAL
 export function obtenerSesion() {
   const sesion = leer(CLAVES.SESION, null);
 
@@ -190,10 +182,8 @@ export function obtenerSesion() {
   return sesion;
 }
 
-// ==========================================
-// LISTAR USUARIOS (solo para el panel admin)
-// ==========================================
 
+// LISTAR USUARIOS (solo para el panel admin)
 export function listarUsuarios() {
   return obtenerUsuarios().map(sinContrasena);
 }

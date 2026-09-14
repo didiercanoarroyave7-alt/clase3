@@ -1,6 +1,6 @@
-// ==========================================
+
 // HOOK: usarContactos
-// ==========================================
+//
 // Trae los contactos de la API y encapsula
 // búsqueda, orden y paginación.
 //
@@ -25,10 +25,9 @@ export function usarContactos({ porPagina = 4 } = {}) {
   const [contactosPorPagina, setContactosPorPagina] =
     useState(porPagina);
 
-  // ==========================================
-  // CARGAR
-  // ==========================================
-
+  
+  // CARGAR de obtener la lista de
+  //  contactos desde el servidor al cargar la pantalla
   const cargar = useCallback(async () => {
     setCargando(true);
     setError("");
@@ -49,9 +48,11 @@ export function usarContactos({ porPagina = 4 } = {}) {
     cargar();
   }, [cargar]);
 
-  // ==========================================
+  
   // AGREGAR
-  // ==========================================
+  //  guardar un nuevo contacto en la 
+  // base de datos y actualizar la interfaz
+  
 
   const agregar = useCallback(async (contacto) => {
     const nuevo = await servicioContactos.crear(contacto);
@@ -60,9 +61,10 @@ export function usarContactos({ porPagina = 4 } = {}) {
     return nuevo;
   }, []);
 
-  // ==========================================
-  // ELIMINAR
-  // ==========================================
+  
+  // ELIMINAR para 
+  // eliminar un contacto de la base
+  //  de datos y quitarlo de la pantalla
 
   const eliminar = useCallback(async (id) => {
     await servicioContactos.eliminar(id);
@@ -72,9 +74,11 @@ export function usarContactos({ porPagina = 4 } = {}) {
     );
   }, []);
 
-  // ==========================================
+  
   // ¿EL CORREO YA ESTÁ EN LA AGENDA?
-  // ==========================================
+  // si un correo electrónico ya
+  //  existe registrado en la lista de contactos
+
 
   const correoRepetido = useCallback(
     (correo = "") => {
@@ -88,9 +92,9 @@ export function usarContactos({ porPagina = 4 } = {}) {
     [contactos]
   );
 
-  // ==========================================
+  
   // FILTRAR (sin distinguir mayúsculas)
-  // ==========================================
+  // filtrar la lista de contactos en tiempo real
 
   const filtrados = useMemo(() => {
     const termino = busqueda.toLowerCase().trim();
@@ -113,9 +117,11 @@ export function usarContactos({ porPagina = 4 } = {}) {
     });
   }, [contactos, busqueda]);
 
-  // ==========================================
+  
   // ORDENAR
-  // ==========================================
+  // ordenar alfabéticamente la lista de contactos filtrados de
+  //  forma ascendente (AZ) o descendente (ZA).
+ 
 
   const ordenados = useMemo(() => {
     return [...filtrados].sort((a, b) => {
@@ -128,10 +134,9 @@ export function usarContactos({ porPagina = 4 } = {}) {
     });
   }, [filtrados, ordenAsc]);
 
-  // ==========================================
-  // PAGINACIÓN
-  // ==========================================
-
+  
+  // PAGINACIÓN esto cuando las ponemos de ha 2 o 4 ect...
+ 
   const totalPaginas = Math.ceil(
     ordenados.length / contactosPorPagina
   );

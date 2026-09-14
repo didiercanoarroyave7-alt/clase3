@@ -1,6 +1,5 @@
-// ==========================================
-// FORMULARIO DE INICIO DE SESIÓN
-// ==========================================
+
+// FORMULARIO DE INICIO DE SESIÓN 
 // Correo y contraseña, ambos inputs controlados.
 // La página solo lo coloca; la lógica de entrar
 // vive aquí y en el contexto.

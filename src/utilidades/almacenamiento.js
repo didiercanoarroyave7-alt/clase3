@@ -1,6 +1,5 @@
-// ==========================================
+
 // ALMACENAMIENTO
-// ==========================================
 // Envoltorio sobre localStorage.
 // Centraliza las claves y el JSON.parse/stringify
 // para que ningún componente toque
@@ -13,9 +12,9 @@ export const CLAVES = {
   SESION: `${PREFIJO}:sesion`,
 };
 
-// ==========================================
-// LEER
-// ==========================================
+
+// LEER 
+// utilidad de lectura segura paralocalStorage
 
 export function leer(clave, valorPorDefecto = null) {
   try {
@@ -33,9 +32,8 @@ export function leer(clave, valorPorDefecto = null) {
   }
 }
 
-// ==========================================
+
 // GUARDAR
-// ==========================================
 
 export function guardar(clave, valor) {
   try {
@@ -46,10 +44,9 @@ export function guardar(clave, valor) {
   }
 }
 
-// ==========================================
-// ELIMINAR
-// ==========================================
 
+// ELIMINAR
+//  utilidad de eliminación segura paralocalStorage
 export function eliminar(clave) {
   try {
     localStorage.removeItem(clave);

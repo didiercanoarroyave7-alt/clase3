@@ -1,6 +1,6 @@
-// ==========================================
+
 // DISEÑO
-// ==========================================
+
 // Estructura común de las pantallas privadas:
 // barra superior + menú lateral + contenido.
 

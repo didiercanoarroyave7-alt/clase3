@@ -1,6 +1,5 @@
-// ==========================================
+
 // ALERTA
-// ==========================================
 // Mensaje general del formulario o de la
 // página: éxito, error o información.
 

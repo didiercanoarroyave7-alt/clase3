@@ -1,6 +1,6 @@
-// ==========================================
+
 // PÁGINA: ADMINISTRADOR
-// ==========================================
+
 // Solo llega aquí quien tenga el rol
 // administrador (lo controla RutaProtegida).
 

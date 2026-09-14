@@ -1,7 +1,6 @@
-// ==========================================
+
 // HOOK: usarAutenticacion
-// ==========================================
-// Atajo para leer el contexto de sesión.
+// Atajo para leer el contexto de sesión de inicio.
 
 import { useContext } from "react";
 

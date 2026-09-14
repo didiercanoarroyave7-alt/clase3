@@ -19,16 +19,17 @@
       "email": "valentina@gmail.com"
     },
     {
-      "id": "11",
-      "nombre": "Sebastián Vargas",
-      "telefono": "3189012345",
-      "email": "sebastian@gmail.com"
-    },
-    {
       "id": "19",
       "nombre": "Santiago Díaz",
       "telefono": "3068901234",
       "email": "santiago@gmail.com"
+    },
+    {
+      "nombre": "didier",
+      "telefono": "3233420621",
+      "email": "didiercanoarroyave7@gmail.com",
+      "etiqueta": "compañero",
+      "id": "65MfJwyBlKg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

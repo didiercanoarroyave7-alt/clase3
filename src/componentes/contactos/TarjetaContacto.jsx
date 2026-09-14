@@ -1,6 +1,5 @@
-// ==========================================
+
 // TARJETA DE CONTACTO
-// ==========================================
 // Componente de presentación: recibe el
 // contacto y avisa cuando piden eliminarlo.
 

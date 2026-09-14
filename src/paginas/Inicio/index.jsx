@@ -1,6 +1,5 @@
-// ==========================================
+
 // PÁGINA: INICIO
-// ==========================================
 // Pantalla principal después del login.
 
 import { Link } from "react-router-dom";
@@ -69,21 +68,23 @@ function PaginaInicio() {
       )}
 
       <div className="pagina__acciones">
-        <Link className="boton boton--primario" to="/busqueda">
-          Buscar contactos
-        </Link>
+  {/* Buscar contactos aparece SOLO para usuarios estándar */}
+  {!puedeAdministrar && (
+    <Link className="boton boton--primario" to="/busqueda">
+      Buscar contactos
+    </Link>
+  )}
 
-        {/* La opción de administrar solo aparece
-            si el rol la permite */}
-        {puedeAdministrar && (
-          <Link
-            className="boton boton--secundario"
-            to="/administrador"
-          >
-            Ir a administración
-          </Link>
-        )}
-      </div>
+  {/* Administración aparece SOLO para administradores */}
+  {puedeAdministrar && (
+    <Link
+      className="boton boton--secundario"
+      to="/administrador"
+    >
+      Ir a administración
+    </Link>
+  )}
+</div>
 
       {!puedeAdministrar && (
         <Alerta tipo="info">
@@ -92,6 +93,13 @@ function PaginaInicio() {
           al administrador.
         </Alerta>
       )}
+      {puedeAdministrar && (
+        <Alerta tipo="info">
+          Como administrador puedes crear, consultar, buscar pero en
+           la misma pagina de administración y
+          eliminar contactos.
+        </Alerta>
+      ) }
     </section>
   );
 }
