@@ -1,6 +1,5 @@
-// ==========================================
+
 // PAGINACIÓN
-// ==========================================
 
 function Paginacion({ paginaActual, totalPaginas, alCambiar }) {
   if (totalPaginas <= 0) {

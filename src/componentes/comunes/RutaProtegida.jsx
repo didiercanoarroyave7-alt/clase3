@@ -1,6 +1,6 @@
-// ==========================================
+
 // RUTA PROTEGIDA
-// ==========================================
+
 // Envuelve una ruta y decide tres cosas:
 //
 // 1. Sin sesión           -> manda al login

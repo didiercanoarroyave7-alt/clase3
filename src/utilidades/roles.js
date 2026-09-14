@@ -1,6 +1,5 @@
-// ==========================================
+
 // ROLES Y PERMISOS
-// ==========================================
 // Los roles del sistema y qué puede hacer
 // cada uno. Toda la app pregunta aquí,
 // nunca compara strings suelto.
@@ -12,12 +11,11 @@ export const ROLES = {
 
 export const ETIQUETAS_ROL = {
   [ROLES.ADMINISTRADOR]: "Administrador",
-  [ROLES.USUARIO]: "Usuario estándar",
+  [ROLES.USUARIO]: "Usuario",
 };
 
-// ==========================================
-// PERMISOS
-// ==========================================
+
+// PERMISOS para las paginas y rol
 
 export const PERMISOS = {
   VER_CONTACTOS: "contactos:ver",
@@ -41,10 +39,10 @@ const PERMISOS_POR_ROL = {
   ],
 };
 
-// ==========================================
-// CONSULTAS
-// ==========================================
 
+// CONSULTAS
+// funciones auxiliares de consulta para el sistema
+//  de control de acceso basado en roles
 export function esRolValido(rol) {
   return Object.values(ROLES).includes(rol);
 }

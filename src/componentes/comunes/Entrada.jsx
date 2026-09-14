@@ -1,6 +1,6 @@
-// ==========================================
+
 // ENTRADA
-// ==========================================
+// 
 // Input controlado con etiqueta, borde rojo,
 // ícono de error y mensaje debajo del campo.
 //

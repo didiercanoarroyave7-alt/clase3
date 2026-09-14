@@ -1,6 +1,6 @@
-// ==========================================
+
 // PÁGINA: USUARIO
-// ==========================================
+
 // Datos de la sesión actual y qué puede hacer
 // según su rol.
 

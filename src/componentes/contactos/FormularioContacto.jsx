@@ -1,6 +1,4 @@
-// ==========================================
 // FORMULARIO DE CONTACTO
-// ==========================================
 // Usa el mismo hook y los mismos componentes
 // que el login y el registro, así la validación
 // se ve igual en todo el proyecto.

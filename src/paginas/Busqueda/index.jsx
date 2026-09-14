@@ -1,6 +1,5 @@
-// ==========================================
+
 // PÁGINA: BÚSQUEDA
-// ==========================================
 // Listado principal con barra de búsqueda,
 // orden y paginación.
 

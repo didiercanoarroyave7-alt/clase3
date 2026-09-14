@@ -1,15 +1,16 @@
-// ==========================================
+
 // API (json-server)
-// ==========================================
+
 // Único lugar donde se hace fetch a la API
 // de contactos. Se levanta con:
 //   npx json-server db.json --port 3001
 
 const URL_BASE = "http://localhost:3001";
 
-// ==========================================
+
 // SOLICITUD BASE
-// ==========================================
+// maneja todas las api 
+
 
 async function solicitar(ruta, opciones = {}) {
   const respuesta = await fetch(`${URL_BASE}${ruta}`, {
@@ -33,9 +34,12 @@ async function solicitar(ruta, opciones = {}) {
   return respuesta.json();
 }
 
-// ==========================================
+
 // OPERACIONES
-// ==========================================
+// todas las operaciones CRUD (Crear, Leer, Actualizar, 
+// Borrar) utilizando la función helper solicitar.
+
+
 
 export const api = {
   obtener(ruta) {
@@ -63,9 +67,10 @@ export const api = {
   },
 };
 
-// ==========================================
+
 // CONTACTOS
-// ==========================================
+// mapeando las operaciones de la interfaz 
+// a las rutas específicas del backend ( /contactos)
 
 export const servicioContactos = {
   listar() {

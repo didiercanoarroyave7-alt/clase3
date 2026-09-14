@@ -1,6 +1,4 @@
-// ==========================================
 // LISTA DE CONTACTOS
-// ==========================================
 // Solo pinta la rejilla o el mensaje de
 // "sin resultados". No pide datos.
 

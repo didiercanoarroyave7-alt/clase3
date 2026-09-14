@@ -1,6 +1,6 @@
-// ==========================================
-// BOTÓN
-// ==========================================
+// SOLO HACE CLIC Y SE BLOQUEA Y ESPERA QUE SE PROCESE EL 
+//  FORMLARIO BOTÓN
+// 
 // Componente de presentación. No sabe nada de
 // negocio: solo pinta y avisa del clic.
 

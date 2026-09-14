@@ -1,6 +1,5 @@
-// ==========================================
+
 // BARRA DE NAVEGACIÓN
-// ==========================================
 // Muestra quién está conectado, su rol y el
 // botón de cerrar sesión.
 

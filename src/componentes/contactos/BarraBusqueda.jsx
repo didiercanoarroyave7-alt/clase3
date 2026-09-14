@@ -1,6 +1,5 @@
-// ==========================================
+
 // BARRA DE BÚSQUEDA
-// ==========================================
 // Input controlado + orden + tamaño de página.
 // Busca por nombre, correo, teléfono o etiqueta
 // y no distingue mayúsculas de minúsculas

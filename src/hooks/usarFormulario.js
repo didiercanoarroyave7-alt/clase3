@@ -1,6 +1,5 @@
-// ==========================================
+
 // HOOK: usarFormulario
-// ==========================================
 // Maneja valores, errores, campos tocados y
 // estado de envío de CUALQUIER formulario.
 //
@@ -49,9 +48,9 @@ export function usarFormulario({
   // { tipo: "exito" | "error", texto: string }
   const [mensaje, setMensaje] = useState(null);
 
-  // ==========================================
+ 
   // CAMBIAR UN CAMPO
-  // ==========================================
+  // actualizar cualquier campo de un formulario en tiempo real
 
   const cambiar = useCallback(
     (campo) => (evento) => {
@@ -78,9 +77,10 @@ export function usarFormulario({
     [valores, tocados, esquema]
   );
 
-  // ==========================================
+  //
   // SALIR DE UN CAMPO
-  // ==========================================
+  // perder el foco de un campo del formulario
+  //  y prende los mensajes de error
 
   const tocar = useCallback(
     (campo) => () => {
@@ -98,9 +98,9 @@ export function usarFormulario({
     [valores, tocados, esquema]
   );
 
-  // ==========================================
+  
   // REINICIAR
-  // ==========================================
+  // limpiar y restablecer todo el formulario a su estado original
 
   const reiniciar = useCallback(() => {
     setValores(valoresIniciales);
@@ -108,9 +108,9 @@ export function usarFormulario({
     setTocados({});
   }, [valoresIniciales]);
 
-  // ==========================================
+  
   // ENVIAR
-  // ==========================================
+  // el formulario
 
   const enviar = useCallback(
     async (evento) => {
@@ -153,9 +153,12 @@ export function usarFormulario({
     [valores, esquema, alEnviar, reiniciar]
   );
 
-  // ==========================================
+  
   // PROPIEDADES PARA <Entrada />
-  // ==========================================
+  // conectar la lógica del estado del
+  //  formulario con los componentes visuales de entrada 
+  // ( <Entrada/>o <input />) y de calcular si el formulario
+  //  está listo para enviarse.
 
   const propiedadesCampo = useCallback(
     (campo) => ({

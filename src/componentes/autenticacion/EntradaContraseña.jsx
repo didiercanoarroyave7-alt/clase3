@@ -1,6 +1,6 @@
-// ==========================================
+// 
 // ENTRADA DE CONTRASEÑA
-// ==========================================
+// 
 // Reutiliza <Entrada /> y le agrega el botón
 // para mostrar u ocultar la contraseña.
 
@@ -31,7 +31,7 @@ function EntradaContrasena({
               : "Mostrar contraseña"
           }
         >
-          {visible ? "🙈" : "👁"}
+          {visible ? "ocultar" : "ver"}
         </button>
       }
       {...resto}

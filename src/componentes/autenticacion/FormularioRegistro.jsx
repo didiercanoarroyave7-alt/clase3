@@ -1,6 +1,6 @@
-// ==========================================
+
 // FORMULARIO DE REGISTRO
-// ==========================================
+// 
 // Nombre, correo, contraseña y confirmación.
 // Valida que el correo no esté registrado,
 // la longitud mínima y que ambas claves
@@ -186,7 +186,7 @@ function FormularioRegistro() {
 
         <p className="campo__ayuda">
           El administrador puede crear y eliminar contactos; el
-          usuario estándar solo los consulta.
+          usuario  solo los consulta.
         </p>
       </div>
       {mensaje && (

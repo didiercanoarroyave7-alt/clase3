@@ -1,6 +1,5 @@
-// ==========================================
+
 // PÁGINA: INICIO DE SESIÓN
-// ==========================================
 // La página solo decide el marco y a dónde
 // mandar al que ya está logueado. El formulario
 // hace el trabajo.
